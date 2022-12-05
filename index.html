@@ -29,31 +29,31 @@
             if (playerSelection === "ROCK") {
                 if (computerSelection === "Rock") {
                     return "Draw", "You Draw! Rock Nullifies Rock"
-                } else if (computerSelection === "Paper") {
+                } if (computerSelection === "Paper") {
                     computerScore += 1;
                     return "You Lose! Paper Beats Rock"
-                } else if (computerSelection === "Scissors") {
+                } if (computerSelection === "Scissors") {
                     playerScore += 1;
                     return "You Win! Rock Beats Scissors"
                 }
-            } else if (playerSelection === "PAPER") {
+            } if (playerSelection === "PAPER") {
                 if (computerSelection === "Rock") {
                     playerScore += 1
                     return "You Win! Paper Beats Rock"
-                } else if (computerSelection === "Paper") {
+                } if (computerSelection === "Paper") {
                     return "You Tie! Paper Nullifies Paper"
-                } else if (computerSelection === "Scissors") {
+                } if (computerSelection === "Scissors") {
                     computerScore += 1
                     return "You Lose! Scissors Beats Paper"
                 }
-            } else if (playerSelection === "SCISSORS") {
+            } if (playerSelection === "SCISSORS") {
                 if (computerSelection === "Rock") {
                     computerScore += 1
                     return "You Lose! Rock Beats Scissors"
-                } else if (computerSelection === "Paper") {
+                } if (computerSelection === "Paper") {
                     playerScore += 1
                     return "You Win! Scissors Beats Paper"
-                } else if (computerSelection === "Scissors") {
+                } if (computerSelection === "Scissors") {
                     return "You Tie! Scissors Nullify Scissors"
                 }
             }
