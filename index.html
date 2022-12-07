@@ -21,8 +21,7 @@
 
         const btns = document.querySelectorAll('#btn')
         const result = document.querySelector(".result")
-
-        
+        const score = document.querySelector(".score")
 
         btns.forEach(btn => btn.addEventListener('click', function(e) {
             let playerSelection = btn.className
@@ -31,15 +30,13 @@
         }));
         
         function getComputerChoice() {
-            let choice = Math.round(Math.random() * 3) + 1;
+            let choice = Math.floor(Math.random() * 3) + 1;
             if (choice === 1) {
                 return "rock"
             } else if (choice === 2) {
                 return "paper"
             } else if (choice === 3) {
                 return "scissors"
-            } else {
-                return "rock"
             }
         }
 
@@ -81,21 +78,6 @@
             }
         }
 
-        function playGame() {
-            while (playerScore < 5 && computerScore < 5) {
-                let playerSelection = prompt("choose rock paper or scissors");
-                let computerSelection = getComputerChoice();
-                alert(playRound(playerSelection, computerSelection))
-                alert(`playerScore is ${playerScore} and computerScore is ${computerScore}`)
-            }
-            if (playerScore === 5) {
-                alert("You Win the Game!")
-            } else if (computerScore == 5) {
-                alert("You Lost!!!")
-            }
-        }
-
-        playGame()
     </script>
 </body>
 
