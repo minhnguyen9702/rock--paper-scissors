@@ -24,10 +24,13 @@
         const score = document.querySelector(".score")
 
         btns.forEach(btn => btn.addEventListener('click', function(e) {
-            let playerSelection = btn.className
-            let computerSelection = getComputerChoice()
-            result.textContent = (playRound(playerSelection, computerSelection))
-        }));
+            if (playerScore < 5 && computerScore < 5) {
+                let playerSelection = btn.className
+                let computerSelection = getComputerChoice()
+                result.textContent = (playRound(playerSelection, computerSelection))
+            }
+            displayScore()
+            }));
         
         function getComputerChoice() {
             let choice = Math.floor(Math.random() * 3) + 1;
@@ -78,6 +81,15 @@
             }
         }
 
+        function displayScore () {
+            if (playerScore < 5 || computerScore < 5) {
+                score.textContent = `playerScore is ${playerScore} and computerScore is ${computerScore}`
+            } if (playerScore >= 5) {
+                score.textContent = "You Win!!!"
+            } if (computerScore >= 5) {
+                score.textContent = "You Lost!!!"
+            }
+        }
     </script>
 </body>
 
